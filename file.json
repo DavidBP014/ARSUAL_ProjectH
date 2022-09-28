@@ -1,0 +1,26 @@
+{
+    "BaseModel.7066f1ec-b9f9-4898-9c5f-68d253ac4148": {
+        "__class__": "BaseModel",
+        "created_at": "2022-09-28T11:51:03.891536",
+        "id": "7066f1ec-b9f9-4898-9c5f-68d253ac4148",
+        "my_number": 31,
+        "name": "Jhonatan",
+        "updated_at": "2022-09-28T11:51:03.891563"
+    },
+    "BaseModel.d3dfdbd7-99d5-4d35-a30d-9d8c27ba9c92": {
+        "__class__": "BaseModel",
+        "created_at": "2022-09-28T11:53:03.802712",
+        "id": "d3dfdbd7-99d5-4d35-a30d-9d8c27ba9c92",
+        "my_number": 35,
+        "name": "clara",
+        "updated_at": "2022-09-28T11:53:03.802723"
+    },
+    "BaseModel.e447e077-5191-4400-9544-190df953dfc7": {
+        "__class__": "BaseModel",
+        "created_at": "2022-09-28T12:04:02.694402",
+        "id": "e447e077-5191-4400-9544-190df953dfc7",
+        "my_number": 18,
+        "name": "Angie",
+        "updated_at": "2022-09-28T12:04:02.694413"
+    }
+}
