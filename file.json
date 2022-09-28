@@ -7,6 +7,14 @@
         "name": "Jhonatan",
         "updated_at": "2022-09-28T11:51:03.891563"
     },
+    "BaseModel.b3ece549-05ed-4fe1-bb77-7031541102db": {
+        "__class__": "BaseModel",
+        "created_at": "2022-09-28T15:17:31.211250",
+        "id": "b3ece549-05ed-4fe1-bb77-7031541102db",
+        "my_number": 310,
+        "name": "patricia",
+        "updated_at": "2022-09-28T15:17:31.211260"
+    },
     "BaseModel.d3dfdbd7-99d5-4d35-a30d-9d8c27ba9c92": {
         "__class__": "BaseModel",
         "created_at": "2022-09-28T11:53:03.802712",
