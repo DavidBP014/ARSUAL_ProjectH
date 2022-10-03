@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""This is the Base Model module.
+"""
+This is the Base Model module.
 Contains the BaseModel class which will be the
 "base" of all other classes in this project.
 """
