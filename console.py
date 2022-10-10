@@ -4,19 +4,18 @@
 import cmd
 import shlex
 import models
-import ast
+import sys
 
 from models.base_model import BaseModel
 from models.user import User
-from models.amenity import Amenity
-from models.city import City
 from models.artist import Artist
 from models.review import Review
-from models.state import State
+from models.score import Score
 
-class AppCommand(cmd.Cmd):
+
+class HBNBCommand(cmd.Cmd):
     """All the command of the aplication"""
-    prompt = "(ARSUAL)"
+    prompt = "(hbnb)"
 
     errors = {
         "missingClass": "** class name missing **",
@@ -26,9 +25,10 @@ class AppCommand(cmd.Cmd):
         "missingAttr": "** attribute name missing **",
     }
 
-    classes = [
-        "BaseModel", "User", "Amenity", "City", "Artist", "Review", "State"
-    ]
+    classes = {
+               'BaseModel': BaseModel, 'User': User, 'Artist': Artist,
+               'Score': Score,'Review': Review
+    }
 
     def do_quit(self, arg):
         """
@@ -48,20 +48,40 @@ class AppCommand(cmd.Cmd):
         """handles the emptyline"""
         pass
 
-    def do_create(self, arg):
-        """
-        Instance of BaseModel that saves it and prints the id.
-        """
-        args = shlex.split(arg)
-        models.storage.reload()
-        if len(args) < 1:
+    def do_create(self, args):
+        """ Create an object of any class"""
+        _args = args.split(" ", 1)
+        if not _args[0]:
             print(self.errors["missingClass"])
-        elif args[0] in self.classes:
-            new = eval(args[0])()
-            new.save()
-            print(new.id)
-        else:
+            return
+        elif _args[0] not in HBNBCommand.classes:
             print(self.errors["wrongClass"])
+            return
+        new_instance = HBNBCommand.classes[_args[0]]()
+        if len(_args) > 1:
+            _kwargs = dict((x, y)
+                           for x, y in (elt.split('=')
+                           for elt in _args[1].split(' ')))
+
+            for key, value in _kwargs.items():
+                try:
+                    getattr(new_instance, key)
+                except AttributeError:
+                    continue
+                if value[0] is "\"":
+                    value = value.strip("\"")
+                    value = value.replace("_", " ")
+                    value = value.replace("\\\"", "\"")
+                elif "." in value:
+                    value = float(value)
+                else:
+                    try:
+                        value = int(value)
+                    except:
+                        continue
+                setattr(new_instance, key, value)
+        new_instance.save()
+        print(new_instance.id)
 
     def do_show(self, arg):
         """
@@ -102,16 +122,23 @@ class AppCommand(cmd.Cmd):
         else:
             print(self.errors["wrongClass"])
 
-    def do_all(self, arg):
-        """print all string representation of all instances"""
-        args = shlex.split(arg)
-        models.storage.reload()
-        if len(args) < 1:
-            print([value.__str__() for value in models.storage.all().values()])
-        elif args[0] in self.classes:
-            print([value.__str__() for value in models.storage.all().values()])
+    def do_all(self, args):
+        """ Shows all objects, or all objects of a class"""
+        print_list = []
+
+        if args:
+            args = args.split(' ')[0]  # remove possible trailing args
+            if args not in HBNBCommand.classes:
+                print(self.errors["wrongClass"])
+                return
+            for key, value in models.storage._FileStorage__objects.items():
+                if key.split('.')[0] == args:
+                    print_list.append(str(value))
         else:
-            print(self.errors["wrongClass"])
+            for key, value in models.storage._FileStorage__objects.items():
+                print_list.append(str(value))
+
+        print(print_list)
 
     def do_update(self, arg):
         """Updates an instance based on the class name"""
@@ -148,6 +175,18 @@ class AppCommand(cmd.Cmd):
         else:
             print(self.errors["wrongClass"])
 
+    def do_count(self, arg):
+        "Usage: count <class name> or <class name>.count()"
+        args = shlex.split(arg)
+        models.storage.reload()
+        if len(args) < 1:
+            print(self.errors["missingClass"])
+        elif args[0] in self.classes:
+            instances = str(models.storage.all().keys())
+            print(instances.count(args[0]))
+        else:
+            print(self.errors["wrongClass"])
+
 
 if __name__ == "__main__":
-    AppCommand().cmdloop()
+    HBNBCommand().cmdloop()

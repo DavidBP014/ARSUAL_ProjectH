@@ -1,0 +1,79 @@
+.container .Artistas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .Artistas h1 {
+    font-size: 30px;
+    flex: 0 0 100%;
+    margin: 0;
+    padding-top: 30px;
+    padding-left: 30px;
+  }
+  
+  .Artistas article {
+    width: 390px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ff5a5f;
+    border-radius: 4px;
+    text-align: center;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .Artistas article h2 {
+    font-size: 30px;
+    margin: 0;
+  }
+  
+  .Artistas article .precio_por_hora {
+    position: relative;
+    align-self: flex-end;
+    border: 4px solid #ff5a5f;
+    border-radius: 50%;
+    min-width: 60px;
+    height: 60px;
+    font-size: 30px;
+    color: #ff5a5f;
+    line-height: 60px;
+    margin-top: -40px;
+    padding: 10px;
+  }
+  
+  .Artistas article .información {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    margin: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .Artistas article .información div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 8px;
+    width: 100px;
+  }
+  
+  .Artistas article .information .numero_de_integrantes {
+    background: url("../images/icon_group.png") no-repeat top content-box;
+  }
+  
+  .Artistas article .information .puntuación {
+    background: url("../images/icon_bed.png") no-repeat top content-box;
+  }
+  
+  .Artistas article .Genero,
+  .Artistas article .descripcion {
+    align-self: flex-start;
+    text-align: start;
+    padding: 5px 0px;
+  }

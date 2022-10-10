@@ -7,11 +7,9 @@ from os import path
 
 from models.base_model import BaseModel
 from models.user import User
-from models.amenity import Amenity
-from models.city import City
 from models.artist import Artist
 from models.review import Review
-from models.state import State
+from models.score import Score
 
 
 class FileStorage():
@@ -48,6 +46,6 @@ class FileStorage():
             with open(FileStorage.__file_path, "r") as file:
                 input = json.load(file)
                 for key, value in input.items():
-                    FileStorage.__objects[key] = eval(value["__class__"])(**value)
-        except:
+                    FileStorage.__objects[key] = eval(value["__class__"])
+        except Exception:
             pass
