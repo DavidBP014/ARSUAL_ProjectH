@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Fauna One', serif;
+}
+
+.ewk_contenedor_seccion_1{
+    padding: 10%;
+}
+
+.ewk_cont_sec_1_link{
+    padding: 5%;
+}
+
+.ewk_cont_sec_1_link a{
+    width: 200px;
+}
+
+.ewk_cont_sec_1_hr{
+    border-top: 1px solid rgba(1, 1, 1, 0.3);
+}
+.cover {
+    height: 400px;
+    background-image: url(https://cdn.glitch.global/55e0616e-c996-4508-975f-54f518984711/rsz_conor-samuel-pmsebqxrnxs-unsplash.jpg?v=1665060752044);
+    color: white;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+  }
+  .cover-small {
+    height: 200px;
+  }
+  
+  .card {
+    border: 0 !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  .card-title {
+    min-height: 3rem;
+  }
+  
+  .card-text {
+    min-height: 5rem;
+  }
