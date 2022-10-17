@@ -6,14 +6,14 @@
 }
 
 
-body{
+.content{
   display:flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(180deg, #4ba9e9, #4ba9e9 50%, 
-           #fff 50%, #fff 100%   
-  );
+  /*background: linear-gradient(180deg, #4ba9e9, #4ba9e9 50%, 
+             #fff 50%, #fff 100%   
+  );*/
   font-family: 'Neucha', cursive;;
 }
 .card{
@@ -54,7 +54,7 @@ body{
 .card .details{
   position: relative;
   min-width: 300px;
-  background: #4ba9e9;
+  background: black;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
