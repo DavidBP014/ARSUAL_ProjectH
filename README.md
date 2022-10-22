@@ -4,10 +4,6 @@
 
 our solution is different from the others since they are easier to be contacted and to create a fixed network of clients, thus improving the experience of the artist in the search for their work. 
 
-[The code to front](http:/https://github.com/DavidBP014/ARSUAL_ProjectH/tree/Front "The code to front")
-
-[The code to Back](http:/https://github.com/DavidBP014/ARSUAL_ProjectH/tree/main/models "The code to Back")
-
 
 ## Main objectives
 
