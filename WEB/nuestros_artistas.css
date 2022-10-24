@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color:black;
+  background-image: url("img/rsz_brandon-erlinger-ford-jl8qfwnuocq-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: unset;
+}
 .logo{
   border-radius: 200%;
 }
