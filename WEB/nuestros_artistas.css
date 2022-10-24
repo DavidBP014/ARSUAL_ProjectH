@@ -31,7 +31,7 @@ body {
 .d-grid{
   width: 60%;
   margin: auto;
-  position: relative;
+  position:relative;
   z-index: 2;
   color: #fff;
 }
