@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>ARSUAL</TITLE>
+    </HEAD>
+    <BODY>
+        <H1>Scores</H1>
+        <UL>
+			{% for score in scores|sort(attribute="name") %}
+			<LI>{{ score.id }}: <B>{{ score.name }}</B></LI>
+			{% endfor %}
+		</UL>
+    </BODY>
+</HTML>

@@ -1,3 +1,6 @@
-create State name="California"
-create State name="Arizona"
-all State
+create Arts name="Erotomanos"
+create Arts name="Rural"
+all Arts
+
+create Score name=9
+all Score

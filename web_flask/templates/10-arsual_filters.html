@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="static/styles/4-common.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/3-header.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/3-footer.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/6-filters.css">
+    <link rel="icon" href="static/images/picture1.png" />
+    <title>ARSUAL</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo"></div>
+    </header>
+    <div class="container">
+      <section class="filters">
+	<div class="locations">
+	  <h3>States</h3>
+	  <h4>&nbsp;</h4>
+	  <div class="popover">
+      {% for score in scores|sort(attribute="name") %}
+      <ul>
+	      <li>
+		      <h2>{{ score.name }}</h2>
+              <ul>
+              </ul>
+			  {% endfor %}
+	      </li>
+      </ul>
+	  </div>
+	</div>
+	<div class="artts">
+	  <h3>Artts</h3>
+	  <h4>&nbsp;</h4>
+	  <ul class="popover">
+      {% for arts in artts|sort(attribute="name") %}
+	      <li><div class="list_content">{{ arts.name }}</div></li>
+	  {% endfor %}
+    </ul>
+	</div>
+	<button type="button">Search</button>
+      </section>
+    </div>
+    <footer>
+      <p>ARSUAL PROJECT</p>
+    </footer>
+  </body>
+</html>

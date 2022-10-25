@@ -4,18 +4,19 @@
 import cmd
 import shlex
 import models
-import sys
 
 from models.base_model import BaseModel
 from models.user import User
 from models.artist import Artist
-from models.review import Review
+from models.arts import Arts
 from models.score import Score
+from models import storage
+from shlex import split
 
 
-class HBNBCommand(cmd.Cmd):
+class ArsualCommand(cmd.Cmd):
     """All the command of the aplication"""
-    prompt = "(hbnb)"
+    prompt = "(arsual)"
 
     errors = {
         "missingClass": "** class name missing **",
@@ -27,7 +28,7 @@ class HBNBCommand(cmd.Cmd):
 
     classes = {
                'BaseModel': BaseModel, 'User': User, 'Artist': Artist,
-               'Score': Score,'Review': Review
+               'Score': Score, 'Arts': Arts
     }
 
     def do_quit(self, arg):
@@ -54,10 +55,10 @@ class HBNBCommand(cmd.Cmd):
         if not _args[0]:
             print(self.errors["missingClass"])
             return
-        elif _args[0] not in HBNBCommand.classes:
+        elif _args[0] not in ArsualCommand.classes:
             print(self.errors["wrongClass"])
             return
-        new_instance = HBNBCommand.classes[_args[0]]()
+        new_instance = ArsualCommand.classes[_args[0]]()
         if len(_args) > 1:
             _kwargs = dict((x, y)
                            for x, y in (elt.split('=')
@@ -77,7 +78,7 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     try:
                         value = int(value)
-                    except:
+                    except Exception:
                         continue
                 setattr(new_instance, key, value)
         new_instance.save()
@@ -124,21 +125,19 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, args):
         """ Shows all objects, or all objects of a class"""
-        print_list = []
-
+        my_list = []
         if args:
             args = args.split(' ')[0]  # remove possible trailing args
-            if args not in HBNBCommand.classes:
+            if args not in ArsualCommand.classes:
                 print(self.errors["wrongClass"])
                 return
-            for key, value in models.storage._FileStorage__objects.items():
-                if key.split('.')[0] == args:
-                    print_list.append(str(value))
+            for k, v in models.storage.all(args).items():
+                my_list.append(str(v))
         else:
-            for key, value in models.storage._FileStorage__objects.items():
-                print_list.append(str(value))
+            for k, v in models.storage.all().items():
+                my_list.append(str(v))
 
-        print(print_list)
+        print(my_list)
 
     def do_update(self, arg):
         """Updates an instance based on the class name"""
@@ -189,4 +188,4 @@ class HBNBCommand(cmd.Cmd):
 
 
 if __name__ == "__main__":
-    HBNBCommand().cmdloop()
+    ArsualCommand().cmdloop()
