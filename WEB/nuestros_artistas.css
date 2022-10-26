@@ -28,6 +28,19 @@ body {
 
 }
 
+.body-content {
+  /*background-image: url("img/fondo-1.jpeg");*/
+  background-color: black;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.content-row-title {
+  font-size: 42px;
+  color: #BDB76B;
+}
+
 .d-grid{
   width: 60%;
   margin: auto;
@@ -47,9 +60,9 @@ body {
 }
 .card{
   display: flex;
-  width: 300px;
+  width: 270px;
   height: 380px;
-  background-color: #fff;
+  background-color: black !important;
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
   overflow: hidden;
   transition: 0.5s ease-in-out

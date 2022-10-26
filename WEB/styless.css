@@ -10,8 +10,19 @@ body{
 
 }
 
+.home-logo-video {
+    width: 135px;
+    height: 135px;
+}
+
 .ewk_contenedor_seccion_1{
     padding: 10%;
+    color: #DEB887;
+    font-size: 19px;
+}
+
+.footer-title {
+    color: #DEB887 !important;
 }
 
 .ewk_cont_sec_1_link{
