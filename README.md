@@ -2,7 +2,7 @@
 
 ## Arsual Project Description 
 
-our solution is different from the others since they are easier to be contacted and to create a fixed network of clients, thus improving the experience of the artist in the search for their work. 
+Our solution is different from the others since they are easier to be contacted and to create a fixed network of clients, thus improving the experience of the artist in the search for their work. 
 
 
 ## Main objectives
@@ -35,5 +35,5 @@ Fotos de la web para la explicacion de eso
 
 ## AUthors
 Juan Ballesteros (Correo)
-Angie Aldana (Correo)
+Angie Aldana (angiel.aldanac@outlook.com)
 Cesar Martinez (Correo)
