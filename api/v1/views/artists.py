@@ -26,7 +26,7 @@ def artists_id(id):
                 return {"error": "Not a JSON"}, 400
             for key, value in kwargs.items():
                 if key not in ["id", "user_id",
-                             "created_at", "updated_at"]:
+                               "created_at", "updated_at"]:
                     setattr(artist, key, value)
             artist.save()
         return place.to_dict()

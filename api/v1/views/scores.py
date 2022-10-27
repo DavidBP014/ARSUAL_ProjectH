@@ -22,7 +22,7 @@ def scores():
 
 
 @app_views.route('/scores/<id>', methods=['GET', 'DELETE', 'PUT'],
-                  strict_slashes=False)
+                 strict_slashes=False)
 def scores_id(id):
     """Flask route at /scores/<id>"""
     score = storage.get(Score, id)

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/styles/4-common.css?{{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="../static/styles/3-header.css?{{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="../static/styles/3-footer.css?{{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="../static/styles/6-filters.css?{{ cache_id }}">
+    <link type="text/css" rel="stylesheet" href="../static/styles/8-artists.css?{{ cache_id }}">
+    <link rel="icon" href="../static/images/icon.png" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="/static/scripts/4-arsual.js?{{ cache_id }}"></script>
+    <title>ARSUAL</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo"></div>
+      <div id="api_status"></div>
+    </header>
+    <div class="container">
+      <section class="filters">
+	<div class="locations">
+	  <h3>Scores</h3>
+	  <h4>&nbsp;</h4>
+	  <div class="popover">
+	    <ul>
+	      {% for score in scores %}
+	      <li>
+		<h2>{{ score[0].name }}:</h2>
+	      </li>
+	      {% endfor %}
+	    </ul>
+	  </div>
+	</div>
+	<div class="artts">
+	  <h3>Artts</h3>
+	  <h4>&nbsp;</h4>
+	  <div class="popover">
+	    <ul>
+	      {% for arts in artts %}
+	      <li> <input type="checkbox" data-id="{{ arts.id }}" data-name="{{ arts.name }}">
+		{{ arts.name }}
+	      </li>
+	      {% endfor %}
+	    </ul>
+	  </div>
+	</div>
+	<button type="button" onclick="searchArtistsArtts()">Search</button>
+      </section>
+      <div class="artists"><h1>Artists</h1></div>
+      <section class="artists">
+	<!-- <h1>Places</h1> -->
+      </section>
+    </div>
+    <footer>
+      <p>Arsual_Proyect</p>
+    </footer>
+  </body>
+</html>

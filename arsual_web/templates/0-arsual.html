@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/4-common.css') }}? {{ cache_id }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/3-header.css') }}?{{ cache_id }}" />
+    <link rel="stylesheet" type="text/css" href="static/styles/3-footer.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/6-filters.css') }}?{{ cache_id }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/8-artists.css') }}?{{ cache_id }}" />   
+    <link rel="icon" href="{{ url_for('static', filename='images/icon.png') }}?{{ cache_id }}" />
+    <title>ARSUAL</title>
+  </head>
+	<header></header>
+	<div class="container">
+		<section class="filters">
+			<div class="locations">
+				<h3>Scores</h3>
+				<h4>&nbsp;</h4>
+				<UL class="popover">
+					{% for score in scores %}
+					<LI>
+					</LI>
+					{% endfor %}
+				</UL>
+			</div>
+			<div class="artts">
+				<h3>Artts</h3>
+				<h4>&nbsp;</h4>
+				<UL class="popover">
+					{% for arts in artts %}
+					<LI>{{ arts.name }}</LI>
+					{% endfor %}
+				</UL>
+			</div>
+			<button>Search</button>
+		</section>
+		<section class="artists">
+			<h1>Artists</h1>
+			{% for artist in artists %}
+			<article>
+				<h2>{{ artist.name }}</h2>
+				<div class="price_by_hour">${{ artist.price_by_hour }}</div>
+				<div class="information">
+				</div>
+				<div class="user">
+					<strong>Owner:</strong>&nbsp;
+					{{ artist.user.first_name }} {{ artist.user.last_name }}
+				</div>
+				<div class="description">
+					{{ artist.description|safe }}
+				</div>
+			</article>
+			{% endfor %}
+		</section>
+	</div>
+	<footer>
+		<p>ARSUAL_WEB</p>
+	</footer>
+</body>
+
+</html>
