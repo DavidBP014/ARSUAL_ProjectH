@@ -34,6 +34,6 @@ Fotos de la web para la explicacion de eso
 
 
 ## AUthors
-Juan Ballesteros (Correo)
+Juan Ballesteros (Juandaballesteros014@gmail.com)
 Angie Aldana (angiel.aldanac@outlook.com)
 Cesar Martinez (Correo)
